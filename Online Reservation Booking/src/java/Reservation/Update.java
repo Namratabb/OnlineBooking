@@ -38,13 +38,15 @@ public class Update extends HttpServlet {
             out.println("<body>");
             Username=request.getParameter("tbname");
             password=request.getParameter("tbpass");
+            
             Connection con;
             PreparedStatement stmt;
             
             try {
                 DriverManager.registerDriver(new com.mysql.jdbc.Driver());
                 con=DriverManager.getConnection("jdbc:mysql://localhost:3306/resturant","root","admin");
-                stmt=con.prepareStatement()
+                System.out.println("Connection Object"+con.getCatalog());
+                //stmt=con.prepareStatement()
             } catch (SQLException ex) {
                 Logger.getLogger(Update.class.getName()).log(Level.SEVERE, null, ex);
             }
